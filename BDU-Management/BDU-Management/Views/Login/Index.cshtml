@@ -1,0 +1,67 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Giriş </title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="~/Assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-login.css" />
+	<link href="~/Assets/css/font-awesome.css" rel="stylesheet" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+	<link href="~/Assets/style.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="Haydar_Aliev_remarks">
+		<div class="text">
+			Bakı Dövlət Universiteti<br>
+			Azərbaycan xalqının milli sərvətidir!
+		</div>
+		<div class="pull-right quote-author">Heydər Əliyev</div>
+		<img src="~/Assets/img/Haydar_Aliev.png"/>
+	</div>
+	<div id="loginbox">
+		<form id="loginform" class="form-vertical" method="post" action="@Url.Action("Index", "Login")">
+			<div class="control-group">
+				<div class="controls">
+					<div class="main_input_box">
+						<span class="add-on bg_lg"><i class="icon-user"> </i></span><input type="text" name="authorized_person_email" placeholder="E-mail" required/>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<div class="main_input_box">
+						<span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" name="authorized_person_password" placeholder="Şifrə" required/>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<div class="main_input_box">
+						@{
+							if (ViewBag.LoginError != null)
+							{
+								<span class="color_white">@ViewBag.LoginError</span>
+							}
+							if (ViewBag.LoginError == null && TempData["PasswordChanged"] != null)
+							{
+								<span class="color_white">@TempData["PasswordChanged"]</span>
+							}
+						}
+					</div>
+				</div>
+			</div>
+			<div class="form-actions text-center">
+				<button type="submit" class="btn btn-success login_btn">Daxil Ol</button>
+			</div>
+		</form>
+	</div>
+	<script src="~/Assets/js/jquery.min.js"></script>
+	<script src="~/Assets/js/matrix.login.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8c7a9dccba146fab3f67c1ff10f6224" Name="Diagram1" ZoomLevel="40">
+        <EntityTypeShape EntityType="BDU_ManagementModel.Authorized_Persons" Width="1.5" PointX="5.75" PointY="3.5" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Cafedra" Width="1.5" PointX="10.25" PointY="3.125" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Center" Width="1.5" PointX="8" PointY="6.75" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Degree" Width="1.5" PointX="3.5" PointY="1.75" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Faculty" Width="1.5" PointX="8" PointY="0.875" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Gender" Width="1.5" PointX="0.5" PointY="4.75" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Museum" Width="1.5" PointX="8" PointY="9.25" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Profession_Types" Width="1.5" PointX="10.25" PointY="0.5" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Profession" Width="1.5" PointX="12.5" PointY="3.125" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Prorector_Branchs" Width="1.5" PointX="8" PointY="11.75" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Student" Width="1.5" PointX="14.75" PointY="6.375" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Subject" Width="1.5" PointX="14.75" PointY="3.375" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Teacher" Width="1.5" PointX="2.75" PointY="4.25" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.Teachers_Subjects_Pivot" Width="1.5" PointX="17" PointY="4.25" />
+        <EntityTypeShape EntityType="BDU_ManagementModel.User_Roles" Width="1.5" PointX="3.5" PointY="8" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Authorized_Persons_To_Degrees" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Authorized_Persons_To_Genders" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Authorized_Persons_To_Roles" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Cafedras_To_Authorized_Persons" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Centers_To_Authorized_Persons" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Faculties_To_Authorized_Persons" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Museums_To_Authorized_Persons" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Prorector_Branchs_To_Authorized_Persons" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Cafedras_Faculties" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Professions_To_Cafedras" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Students_To_Genders" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Teachers_To_Genders" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Professions_To_Profession_Types" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Students_To_Professions" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Subjects_Professions" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Teachers_Subjects_Pivot_To_Subjects" />
+        <AssociationConnector Association="BDU_ManagementModel.FK_Teachers_Subjects_Pivot_To_Teachers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

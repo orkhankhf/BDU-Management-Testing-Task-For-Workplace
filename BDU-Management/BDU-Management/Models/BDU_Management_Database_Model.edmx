@@ -1,0 +1,1067 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BDU_ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authorized_Persons">
+          <Key>
+            <PropertyRef Name="authorized_person_id" />
+          </Key>
+          <Property Name="authorized_person_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="authorized_person_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="authorized_person_surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="authorized_person_father_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="authorized_person_email" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="authorized_person_password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="authorized_person_role_id" Type="int" Nullable="false" />
+          <Property Name="authorized_person_degree_id" Type="int" />
+          <Property Name="authorized_person_gender_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cafedras">
+          <Key>
+            <PropertyRef Name="cafedra_id" />
+          </Key>
+          <Property Name="cafedra_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cafedra_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cafedra_chief_id" Type="int" Nullable="false" />
+          <Property Name="cafedra_faculty_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Centers">
+          <Key>
+            <PropertyRef Name="center_id" />
+          </Key>
+          <Property Name="center_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="center_name" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="center_chief_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Degrees">
+          <Key>
+            <PropertyRef Name="degree_id" />
+          </Key>
+          <Property Name="degree_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="degree_name" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faculties">
+          <Key>
+            <PropertyRef Name="faculty_id" />
+          </Key>
+          <Property Name="faculty_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="faculty_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="faculty_dean_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genders">
+          <Key>
+            <PropertyRef Name="gender_id" />
+          </Key>
+          <Property Name="gender_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gender_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Museums">
+          <Key>
+            <PropertyRef Name="museum_id" />
+          </Key>
+          <Property Name="museum_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="museum_name" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="museum_chief_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profession_Types">
+          <Key>
+            <PropertyRef Name="profession_type_id" />
+          </Key>
+          <Property Name="profession_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="profession_type_name" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Professions">
+          <Key>
+            <PropertyRef Name="profession_id" />
+          </Key>
+          <Property Name="profession_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="profession_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="profession_profession_type_id" Type="int" Nullable="false" />
+          <Property Name="profession_cafedra_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prorector_Branchs">
+          <Key>
+            <PropertyRef Name="prorector_branch_id" />
+          </Key>
+          <Property Name="prorector_branch_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prorector_branch_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="prorector_branch_prorector_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="student_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="student_surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="student_father_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="student_email" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="student_password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="student_gender_id" Type="int" Nullable="false" />
+          <Property Name="student_profession_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="subject_id" />
+          </Key>
+          <Property Name="subject_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subject_name" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="subject_profession_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teachers">
+          <Key>
+            <PropertyRef Name="teacher_id" />
+          </Key>
+          <Property Name="teacher_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teacher_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="teacher_surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="teacher_father_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="teacher_email" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="teacher_password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="teacher_gender_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teachers_Subjects_Pivot">
+          <Key>
+            <PropertyRef Name="ts_id" />
+          </Key>
+          <Property Name="ts_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ts_teacher_id" Type="int" Nullable="false" />
+          <Property Name="ts_subject_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Roles">
+          <Key>
+            <PropertyRef Name="user_role_id" />
+          </Key>
+          <Property Name="user_role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_role_name" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Authorized_Persons_To_Degrees">
+          <End Role="Degrees" Type="Self.Degrees" Multiplicity="0..1" />
+          <End Role="Authorized_Persons" Type="Self.Authorized_Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degrees">
+              <PropertyRef Name="degree_id" />
+            </Principal>
+            <Dependent Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_degree_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Authorized_Persons_To_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+          <End Role="Authorized_Persons" Type="Self.Authorized_Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="gender_id" />
+            </Principal>
+            <Dependent Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Authorized_Persons_To_Roles">
+          <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="1" />
+          <End Role="Authorized_Persons" Type="Self.Authorized_Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Roles">
+              <PropertyRef Name="user_role_id" />
+            </Principal>
+            <Dependent Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cafedras_Faculties">
+          <End Role="Faculties" Type="Self.Faculties" Multiplicity="1" />
+          <End Role="Cafedras" Type="Self.Cafedras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculties">
+              <PropertyRef Name="faculty_id" />
+            </Principal>
+            <Dependent Role="Cafedras">
+              <PropertyRef Name="cafedra_faculty_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cafedras_To_Authorized_Persons">
+          <End Role="Authorized_Persons" Type="Self.Authorized_Persons" Multiplicity="1" />
+          <End Role="Cafedras" Type="Self.Cafedras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Cafedras">
+              <PropertyRef Name="cafedra_chief_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Centers_To_Authorized_Persons">
+          <End Role="Authorized_Persons" Type="Self.Authorized_Persons" Multiplicity="1" />
+          <End Role="Centers" Type="Self.Centers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Centers">
+              <PropertyRef Name="center_chief_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Faculties_To_Authorized_Persons">
+          <End Role="Authorized_Persons" Type="Self.Authorized_Persons" Multiplicity="1" />
+          <End Role="Faculties" Type="Self.Faculties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Faculties">
+              <PropertyRef Name="faculty_dean_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Museums_To_Authorized_Persons">
+          <End Role="Authorized_Persons" Type="Self.Authorized_Persons" Multiplicity="1" />
+          <End Role="Museums" Type="Self.Museums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Museums">
+              <PropertyRef Name="museum_chief_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Professions_To_Cafedras">
+          <End Role="Cafedras" Type="Self.Cafedras" Multiplicity="1" />
+          <End Role="Professions" Type="Self.Professions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cafedras">
+              <PropertyRef Name="cafedra_id" />
+            </Principal>
+            <Dependent Role="Professions">
+              <PropertyRef Name="profession_cafedra_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Professions_To_Profession_Types">
+          <End Role="Profession_Types" Type="Self.Profession_Types" Multiplicity="1" />
+          <End Role="Professions" Type="Self.Professions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profession_Types">
+              <PropertyRef Name="profession_type_id" />
+            </Principal>
+            <Dependent Role="Professions">
+              <PropertyRef Name="profession_profession_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prorector_Branchs_To_Authorized_Persons">
+          <End Role="Authorized_Persons" Type="Self.Authorized_Persons" Multiplicity="1" />
+          <End Role="Prorector_Branchs" Type="Self.Prorector_Branchs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Prorector_Branchs">
+              <PropertyRef Name="prorector_branch_prorector_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_To_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="gender_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="student_gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_To_Professions">
+          <End Role="Professions" Type="Self.Professions" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professions">
+              <PropertyRef Name="profession_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="student_profession_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_Professions">
+          <End Role="Professions" Type="Self.Professions" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professions">
+              <PropertyRef Name="profession_id" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="subject_profession_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_Subjects_Pivot_To_Subjects">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+          <End Role="Teachers_Subjects_Pivot" Type="Self.Teachers_Subjects_Pivot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="subject_id" />
+            </Principal>
+            <Dependent Role="Teachers_Subjects_Pivot">
+              <PropertyRef Name="ts_subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_Subjects_Pivot_To_Teachers">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="1" />
+          <End Role="Teachers_Subjects_Pivot" Type="Self.Teachers_Subjects_Pivot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="Teachers_Subjects_Pivot">
+              <PropertyRef Name="ts_teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_To_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="gender_id" />
+            </Principal>
+            <Dependent Role="Teachers">
+              <PropertyRef Name="teacher_gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDU_ManagementModelStoreContainer">
+          <EntitySet Name="Authorized_Persons" EntityType="Self.Authorized_Persons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cafedras" EntityType="Self.Cafedras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Centers" EntityType="Self.Centers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Degrees" EntityType="Self.Degrees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Faculties" EntityType="Self.Faculties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Museums" EntityType="Self.Museums" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profession_Types" EntityType="Self.Profession_Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Professions" EntityType="Self.Professions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prorector_Branchs" EntityType="Self.Prorector_Branchs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teachers_Subjects_Pivot" EntityType="Self.Teachers_Subjects_Pivot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Roles" EntityType="Self.User_Roles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Authorized_Persons_To_Degrees" Association="Self.FK_Authorized_Persons_To_Degrees">
+            <End Role="Degrees" EntitySet="Degrees" />
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Authorized_Persons_To_Genders" Association="Self.FK_Authorized_Persons_To_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Authorized_Persons_To_Roles" Association="Self.FK_Authorized_Persons_To_Roles">
+            <End Role="User_Roles" EntitySet="User_Roles" />
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cafedras_Faculties" Association="Self.FK_Cafedras_Faculties">
+            <End Role="Faculties" EntitySet="Faculties" />
+            <End Role="Cafedras" EntitySet="Cafedras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cafedras_To_Authorized_Persons" Association="Self.FK_Cafedras_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Cafedras" EntitySet="Cafedras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Centers_To_Authorized_Persons" Association="Self.FK_Centers_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Centers" EntitySet="Centers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Faculties_To_Authorized_Persons" Association="Self.FK_Faculties_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Faculties" EntitySet="Faculties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Museums_To_Authorized_Persons" Association="Self.FK_Museums_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Museums" EntitySet="Museums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Professions_To_Cafedras" Association="Self.FK_Professions_To_Cafedras">
+            <End Role="Cafedras" EntitySet="Cafedras" />
+            <End Role="Professions" EntitySet="Professions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Professions_To_Profession_Types" Association="Self.FK_Professions_To_Profession_Types">
+            <End Role="Profession_Types" EntitySet="Profession_Types" />
+            <End Role="Professions" EntitySet="Professions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prorector_Branchs_To_Authorized_Persons" Association="Self.FK_Prorector_Branchs_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Prorector_Branchs" EntitySet="Prorector_Branchs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_To_Genders" Association="Self.FK_Students_To_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_To_Professions" Association="Self.FK_Students_To_Professions">
+            <End Role="Professions" EntitySet="Professions" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_Professions" Association="Self.FK_Subjects_Professions">
+            <End Role="Professions" EntitySet="Professions" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_Subjects_Pivot_To_Subjects" Association="Self.FK_Teachers_Subjects_Pivot_To_Subjects">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="Teachers_Subjects_Pivot" EntitySet="Teachers_Subjects_Pivot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_Subjects_Pivot_To_Teachers" Association="Self.FK_Teachers_Subjects_Pivot_To_Teachers">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="Teachers_Subjects_Pivot" EntitySet="Teachers_Subjects_Pivot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_To_Genders" Association="Self.FK_Teachers_To_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Teachers" EntitySet="Teachers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDU_ManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BDU_ManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Authorized_Persons" EntityType="BDU_ManagementModel.Authorized_Persons" />
+          <EntitySet Name="Cafedras" EntityType="BDU_ManagementModel.Cafedra" />
+          <EntitySet Name="Centers" EntityType="BDU_ManagementModel.Center" />
+          <EntitySet Name="Degrees" EntityType="BDU_ManagementModel.Degree" />
+          <EntitySet Name="Faculties" EntityType="BDU_ManagementModel.Faculty" />
+          <EntitySet Name="Genders" EntityType="BDU_ManagementModel.Gender" />
+          <EntitySet Name="Museums" EntityType="BDU_ManagementModel.Museum" />
+          <EntitySet Name="Profession_Types" EntityType="BDU_ManagementModel.Profession_Types" />
+          <EntitySet Name="Professions" EntityType="BDU_ManagementModel.Profession" />
+          <EntitySet Name="Prorector_Branchs" EntityType="BDU_ManagementModel.Prorector_Branchs" />
+          <EntitySet Name="Students" EntityType="BDU_ManagementModel.Student" />
+          <EntitySet Name="Subjects" EntityType="BDU_ManagementModel.Subject" />
+          <EntitySet Name="Teachers" EntityType="BDU_ManagementModel.Teacher" />
+          <EntitySet Name="Teachers_Subjects_Pivot" EntityType="BDU_ManagementModel.Teachers_Subjects_Pivot" />
+          <EntitySet Name="User_Roles" EntityType="BDU_ManagementModel.User_Roles" />
+          <AssociationSet Name="FK_Authorized_Persons_To_Degrees" Association="BDU_ManagementModel.FK_Authorized_Persons_To_Degrees">
+            <End Role="Degree" EntitySet="Degrees" />
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Authorized_Persons_To_Genders" Association="BDU_ManagementModel.FK_Authorized_Persons_To_Genders">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Authorized_Persons_To_Roles" Association="BDU_ManagementModel.FK_Authorized_Persons_To_Roles">
+            <End Role="User_Roles" EntitySet="User_Roles" />
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cafedras_To_Authorized_Persons" Association="BDU_ManagementModel.FK_Cafedras_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Cafedra" EntitySet="Cafedras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Centers_To_Authorized_Persons" Association="BDU_ManagementModel.FK_Centers_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Center" EntitySet="Centers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Faculties_To_Authorized_Persons" Association="BDU_ManagementModel.FK_Faculties_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Museums_To_Authorized_Persons" Association="BDU_ManagementModel.FK_Museums_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Museum" EntitySet="Museums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prorector_Branchs_To_Authorized_Persons" Association="BDU_ManagementModel.FK_Prorector_Branchs_To_Authorized_Persons">
+            <End Role="Authorized_Persons" EntitySet="Authorized_Persons" />
+            <End Role="Prorector_Branchs" EntitySet="Prorector_Branchs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cafedras_Faculties" Association="BDU_ManagementModel.FK_Cafedras_Faculties">
+            <End Role="Faculty" EntitySet="Faculties" />
+            <End Role="Cafedra" EntitySet="Cafedras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Professions_To_Cafedras" Association="BDU_ManagementModel.FK_Professions_To_Cafedras">
+            <End Role="Cafedra" EntitySet="Cafedras" />
+            <End Role="Profession" EntitySet="Professions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_To_Genders" Association="BDU_ManagementModel.FK_Students_To_Genders">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_To_Genders" Association="BDU_ManagementModel.FK_Teachers_To_Genders">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Teacher" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Professions_To_Profession_Types" Association="BDU_ManagementModel.FK_Professions_To_Profession_Types">
+            <End Role="Profession_Types" EntitySet="Profession_Types" />
+            <End Role="Profession" EntitySet="Professions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_To_Professions" Association="BDU_ManagementModel.FK_Students_To_Professions">
+            <End Role="Profession" EntitySet="Professions" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_Professions" Association="BDU_ManagementModel.FK_Subjects_Professions">
+            <End Role="Profession" EntitySet="Professions" />
+            <End Role="Subject" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_Subjects_Pivot_To_Subjects" Association="BDU_ManagementModel.FK_Teachers_Subjects_Pivot_To_Subjects">
+            <End Role="Subject" EntitySet="Subjects" />
+            <End Role="Teachers_Subjects_Pivot" EntitySet="Teachers_Subjects_Pivot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_Subjects_Pivot_To_Teachers" Association="BDU_ManagementModel.FK_Teachers_Subjects_Pivot_To_Teachers">
+            <End Role="Teacher" EntitySet="Teachers" />
+            <End Role="Teachers_Subjects_Pivot" EntitySet="Teachers_Subjects_Pivot" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Authorized_Persons">
+          <Key>
+            <PropertyRef Name="authorized_person_id" />
+          </Key>
+          <Property Name="authorized_person_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="authorized_person_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="authorized_person_surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="authorized_person_father_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="authorized_person_email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="authorized_person_password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="authorized_person_role_id" Type="Int32" Nullable="false" />
+          <Property Name="authorized_person_degree_id" Type="Int32" />
+          <Property Name="authorized_person_gender_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Degree" Relationship="BDU_ManagementModel.FK_Authorized_Persons_To_Degrees" FromRole="Authorized_Persons" ToRole="Degree" />
+          <NavigationProperty Name="Gender" Relationship="BDU_ManagementModel.FK_Authorized_Persons_To_Genders" FromRole="Authorized_Persons" ToRole="Gender" />
+          <NavigationProperty Name="User_Roles" Relationship="BDU_ManagementModel.FK_Authorized_Persons_To_Roles" FromRole="Authorized_Persons" ToRole="User_Roles" />
+          <NavigationProperty Name="Cafedras" Relationship="BDU_ManagementModel.FK_Cafedras_To_Authorized_Persons" FromRole="Authorized_Persons" ToRole="Cafedra" />
+          <NavigationProperty Name="Centers" Relationship="BDU_ManagementModel.FK_Centers_To_Authorized_Persons" FromRole="Authorized_Persons" ToRole="Center" />
+          <NavigationProperty Name="Faculties" Relationship="BDU_ManagementModel.FK_Faculties_To_Authorized_Persons" FromRole="Authorized_Persons" ToRole="Faculty" />
+          <NavigationProperty Name="Museums" Relationship="BDU_ManagementModel.FK_Museums_To_Authorized_Persons" FromRole="Authorized_Persons" ToRole="Museum" />
+          <NavigationProperty Name="Prorector_Branchs" Relationship="BDU_ManagementModel.FK_Prorector_Branchs_To_Authorized_Persons" FromRole="Authorized_Persons" ToRole="Prorector_Branchs" />
+        </EntityType>
+        <EntityType Name="Cafedra">
+          <Key>
+            <PropertyRef Name="cafedra_id" />
+          </Key>
+          <Property Name="cafedra_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cafedra_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cafedra_chief_id" Type="Int32" Nullable="false" />
+          <Property Name="cafedra_faculty_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Authorized_Persons" Relationship="BDU_ManagementModel.FK_Cafedras_To_Authorized_Persons" FromRole="Cafedra" ToRole="Authorized_Persons" />
+          <NavigationProperty Name="Faculty" Relationship="BDU_ManagementModel.FK_Cafedras_Faculties" FromRole="Cafedra" ToRole="Faculty" />
+          <NavigationProperty Name="Professions" Relationship="BDU_ManagementModel.FK_Professions_To_Cafedras" FromRole="Cafedra" ToRole="Profession" />
+        </EntityType>
+        <EntityType Name="Center">
+          <Key>
+            <PropertyRef Name="center_id" />
+          </Key>
+          <Property Name="center_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="center_name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="center_chief_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Authorized_Persons" Relationship="BDU_ManagementModel.FK_Centers_To_Authorized_Persons" FromRole="Center" ToRole="Authorized_Persons" />
+        </EntityType>
+        <EntityType Name="Degree">
+          <Key>
+            <PropertyRef Name="degree_id" />
+          </Key>
+          <Property Name="degree_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="degree_name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Authorized_Persons" Relationship="BDU_ManagementModel.FK_Authorized_Persons_To_Degrees" FromRole="Degree" ToRole="Authorized_Persons" />
+        </EntityType>
+        <EntityType Name="Faculty">
+          <Key>
+            <PropertyRef Name="faculty_id" />
+          </Key>
+          <Property Name="faculty_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="faculty_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="faculty_dean_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Authorized_Persons" Relationship="BDU_ManagementModel.FK_Faculties_To_Authorized_Persons" FromRole="Faculty" ToRole="Authorized_Persons" />
+          <NavigationProperty Name="Cafedras" Relationship="BDU_ManagementModel.FK_Cafedras_Faculties" FromRole="Faculty" ToRole="Cafedra" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="gender_id" />
+          </Key>
+          <Property Name="gender_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gender_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Authorized_Persons" Relationship="BDU_ManagementModel.FK_Authorized_Persons_To_Genders" FromRole="Gender" ToRole="Authorized_Persons" />
+          <NavigationProperty Name="Students" Relationship="BDU_ManagementModel.FK_Students_To_Genders" FromRole="Gender" ToRole="Student" />
+          <NavigationProperty Name="Teachers" Relationship="BDU_ManagementModel.FK_Teachers_To_Genders" FromRole="Gender" ToRole="Teacher" />
+        </EntityType>
+        <EntityType Name="Museum">
+          <Key>
+            <PropertyRef Name="museum_id" />
+          </Key>
+          <Property Name="museum_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="museum_name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="museum_chief_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Authorized_Persons" Relationship="BDU_ManagementModel.FK_Museums_To_Authorized_Persons" FromRole="Museum" ToRole="Authorized_Persons" />
+        </EntityType>
+        <EntityType Name="Profession_Types">
+          <Key>
+            <PropertyRef Name="profession_type_id" />
+          </Key>
+          <Property Name="profession_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="profession_type_name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Professions" Relationship="BDU_ManagementModel.FK_Professions_To_Profession_Types" FromRole="Profession_Types" ToRole="Profession" />
+        </EntityType>
+        <EntityType Name="Profession">
+          <Key>
+            <PropertyRef Name="profession_id" />
+          </Key>
+          <Property Name="profession_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="profession_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="profession_profession_type_id" Type="Int32" Nullable="false" />
+          <Property Name="profession_cafedra_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cafedra" Relationship="BDU_ManagementModel.FK_Professions_To_Cafedras" FromRole="Profession" ToRole="Cafedra" />
+          <NavigationProperty Name="Profession_Types" Relationship="BDU_ManagementModel.FK_Professions_To_Profession_Types" FromRole="Profession" ToRole="Profession_Types" />
+          <NavigationProperty Name="Students" Relationship="BDU_ManagementModel.FK_Students_To_Professions" FromRole="Profession" ToRole="Student" />
+          <NavigationProperty Name="Subjects" Relationship="BDU_ManagementModel.FK_Subjects_Professions" FromRole="Profession" ToRole="Subject" />
+        </EntityType>
+        <EntityType Name="Prorector_Branchs">
+          <Key>
+            <PropertyRef Name="prorector_branch_id" />
+          </Key>
+          <Property Name="prorector_branch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prorector_branch_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="prorector_branch_prorector_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Authorized_Persons" Relationship="BDU_ManagementModel.FK_Prorector_Branchs_To_Authorized_Persons" FromRole="Prorector_Branchs" ToRole="Authorized_Persons" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="student_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="student_surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="student_father_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="student_email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="student_password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="student_gender_id" Type="Int32" Nullable="false" />
+          <Property Name="student_profession_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gender" Relationship="BDU_ManagementModel.FK_Students_To_Genders" FromRole="Student" ToRole="Gender" />
+          <NavigationProperty Name="Profession" Relationship="BDU_ManagementModel.FK_Students_To_Professions" FromRole="Student" ToRole="Profession" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="subject_id" />
+          </Key>
+          <Property Name="subject_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subject_name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="subject_profession_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Profession" Relationship="BDU_ManagementModel.FK_Subjects_Professions" FromRole="Subject" ToRole="Profession" />
+          <NavigationProperty Name="Teachers_Subjects_Pivot" Relationship="BDU_ManagementModel.FK_Teachers_Subjects_Pivot_To_Subjects" FromRole="Subject" ToRole="Teachers_Subjects_Pivot" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="teacher_id" />
+          </Key>
+          <Property Name="teacher_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teacher_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="teacher_surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="teacher_father_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="teacher_email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="teacher_password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="teacher_gender_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gender" Relationship="BDU_ManagementModel.FK_Teachers_To_Genders" FromRole="Teacher" ToRole="Gender" />
+          <NavigationProperty Name="Teachers_Subjects_Pivot" Relationship="BDU_ManagementModel.FK_Teachers_Subjects_Pivot_To_Teachers" FromRole="Teacher" ToRole="Teachers_Subjects_Pivot" />
+        </EntityType>
+        <EntityType Name="Teachers_Subjects_Pivot">
+          <Key>
+            <PropertyRef Name="ts_id" />
+          </Key>
+          <Property Name="ts_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ts_teacher_id" Type="Int32" Nullable="false" />
+          <Property Name="ts_subject_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Subject" Relationship="BDU_ManagementModel.FK_Teachers_Subjects_Pivot_To_Subjects" FromRole="Teachers_Subjects_Pivot" ToRole="Subject" />
+          <NavigationProperty Name="Teacher" Relationship="BDU_ManagementModel.FK_Teachers_Subjects_Pivot_To_Teachers" FromRole="Teachers_Subjects_Pivot" ToRole="Teacher" />
+        </EntityType>
+        <EntityType Name="User_Roles">
+          <Key>
+            <PropertyRef Name="user_role_id" />
+          </Key>
+          <Property Name="user_role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_role_name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Authorized_Persons" Relationship="BDU_ManagementModel.FK_Authorized_Persons_To_Roles" FromRole="User_Roles" ToRole="Authorized_Persons" />
+        </EntityType>
+        <Association Name="FK_Authorized_Persons_To_Degrees">
+          <End Type="BDU_ManagementModel.Degree" Role="Degree" Multiplicity="0..1" />
+          <End Type="BDU_ManagementModel.Authorized_Persons" Role="Authorized_Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degree">
+              <PropertyRef Name="degree_id" />
+            </Principal>
+            <Dependent Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_degree_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Authorized_Persons_To_Genders">
+          <End Type="BDU_ManagementModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Authorized_Persons" Role="Authorized_Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="gender_id" />
+            </Principal>
+            <Dependent Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Authorized_Persons_To_Roles">
+          <End Type="BDU_ManagementModel.User_Roles" Role="User_Roles" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Authorized_Persons" Role="Authorized_Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Roles">
+              <PropertyRef Name="user_role_id" />
+            </Principal>
+            <Dependent Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cafedras_To_Authorized_Persons">
+          <End Type="BDU_ManagementModel.Authorized_Persons" Role="Authorized_Persons" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Cafedra" Role="Cafedra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Cafedra">
+              <PropertyRef Name="cafedra_chief_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Centers_To_Authorized_Persons">
+          <End Type="BDU_ManagementModel.Authorized_Persons" Role="Authorized_Persons" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Center" Role="Center" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Center">
+              <PropertyRef Name="center_chief_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Faculties_To_Authorized_Persons">
+          <End Type="BDU_ManagementModel.Authorized_Persons" Role="Authorized_Persons" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Faculty" Role="Faculty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Faculty">
+              <PropertyRef Name="faculty_dean_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Museums_To_Authorized_Persons">
+          <End Type="BDU_ManagementModel.Authorized_Persons" Role="Authorized_Persons" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Museum" Role="Museum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Museum">
+              <PropertyRef Name="museum_chief_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prorector_Branchs_To_Authorized_Persons">
+          <End Type="BDU_ManagementModel.Authorized_Persons" Role="Authorized_Persons" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Prorector_Branchs" Role="Prorector_Branchs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorized_Persons">
+              <PropertyRef Name="authorized_person_id" />
+            </Principal>
+            <Dependent Role="Prorector_Branchs">
+              <PropertyRef Name="prorector_branch_prorector_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cafedras_Faculties">
+          <End Type="BDU_ManagementModel.Faculty" Role="Faculty" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Cafedra" Role="Cafedra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculty">
+              <PropertyRef Name="faculty_id" />
+            </Principal>
+            <Dependent Role="Cafedra">
+              <PropertyRef Name="cafedra_faculty_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Professions_To_Cafedras">
+          <End Type="BDU_ManagementModel.Cafedra" Role="Cafedra" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Profession" Role="Profession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cafedra">
+              <PropertyRef Name="cafedra_id" />
+            </Principal>
+            <Dependent Role="Profession">
+              <PropertyRef Name="profession_cafedra_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_To_Genders">
+          <End Type="BDU_ManagementModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="gender_id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="student_gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_To_Genders">
+          <End Type="BDU_ManagementModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Teacher" Role="Teacher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="gender_id" />
+            </Principal>
+            <Dependent Role="Teacher">
+              <PropertyRef Name="teacher_gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Professions_To_Profession_Types">
+          <End Type="BDU_ManagementModel.Profession_Types" Role="Profession_Types" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Profession" Role="Profession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profession_Types">
+              <PropertyRef Name="profession_type_id" />
+            </Principal>
+            <Dependent Role="Profession">
+              <PropertyRef Name="profession_profession_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_To_Professions">
+          <End Type="BDU_ManagementModel.Profession" Role="Profession" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profession">
+              <PropertyRef Name="profession_id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="student_profession_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_Professions">
+          <End Type="BDU_ManagementModel.Profession" Role="Profession" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Subject" Role="Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profession">
+              <PropertyRef Name="profession_id" />
+            </Principal>
+            <Dependent Role="Subject">
+              <PropertyRef Name="subject_profession_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_Subjects_Pivot_To_Subjects">
+          <End Type="BDU_ManagementModel.Subject" Role="Subject" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Teachers_Subjects_Pivot" Role="Teachers_Subjects_Pivot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="subject_id" />
+            </Principal>
+            <Dependent Role="Teachers_Subjects_Pivot">
+              <PropertyRef Name="ts_subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_Subjects_Pivot_To_Teachers">
+          <End Type="BDU_ManagementModel.Teacher" Role="Teacher" Multiplicity="1" />
+          <End Type="BDU_ManagementModel.Teachers_Subjects_Pivot" Role="Teachers_Subjects_Pivot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="Teachers_Subjects_Pivot">
+              <PropertyRef Name="ts_teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDU_ManagementModelStoreContainer" CdmEntityContainer="BDU_ManagementEntities">
+          <EntitySetMapping Name="Authorized_Persons">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Authorized_Persons">
+              <MappingFragment StoreEntitySet="Authorized_Persons">
+                <ScalarProperty Name="authorized_person_gender_id" ColumnName="authorized_person_gender_id" />
+                <ScalarProperty Name="authorized_person_degree_id" ColumnName="authorized_person_degree_id" />
+                <ScalarProperty Name="authorized_person_role_id" ColumnName="authorized_person_role_id" />
+                <ScalarProperty Name="authorized_person_password" ColumnName="authorized_person_password" />
+                <ScalarProperty Name="authorized_person_email" ColumnName="authorized_person_email" />
+                <ScalarProperty Name="authorized_person_father_name" ColumnName="authorized_person_father_name" />
+                <ScalarProperty Name="authorized_person_surname" ColumnName="authorized_person_surname" />
+                <ScalarProperty Name="authorized_person_name" ColumnName="authorized_person_name" />
+                <ScalarProperty Name="authorized_person_id" ColumnName="authorized_person_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cafedras">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Cafedra">
+              <MappingFragment StoreEntitySet="Cafedras">
+                <ScalarProperty Name="cafedra_faculty_id" ColumnName="cafedra_faculty_id" />
+                <ScalarProperty Name="cafedra_chief_id" ColumnName="cafedra_chief_id" />
+                <ScalarProperty Name="cafedra_name" ColumnName="cafedra_name" />
+                <ScalarProperty Name="cafedra_id" ColumnName="cafedra_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Centers">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Center">
+              <MappingFragment StoreEntitySet="Centers">
+                <ScalarProperty Name="center_chief_id" ColumnName="center_chief_id" />
+                <ScalarProperty Name="center_name" ColumnName="center_name" />
+                <ScalarProperty Name="center_id" ColumnName="center_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Degrees">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Degree">
+              <MappingFragment StoreEntitySet="Degrees">
+                <ScalarProperty Name="degree_name" ColumnName="degree_name" />
+                <ScalarProperty Name="degree_id" ColumnName="degree_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faculties">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Faculty">
+              <MappingFragment StoreEntitySet="Faculties">
+                <ScalarProperty Name="faculty_dean_id" ColumnName="faculty_dean_id" />
+                <ScalarProperty Name="faculty_name" ColumnName="faculty_name" />
+                <ScalarProperty Name="faculty_id" ColumnName="faculty_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Gender">
+              <MappingFragment StoreEntitySet="Genders">
+                <ScalarProperty Name="gender_name" ColumnName="gender_name" />
+                <ScalarProperty Name="gender_id" ColumnName="gender_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Museums">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Museum">
+              <MappingFragment StoreEntitySet="Museums">
+                <ScalarProperty Name="museum_chief_id" ColumnName="museum_chief_id" />
+                <ScalarProperty Name="museum_name" ColumnName="museum_name" />
+                <ScalarProperty Name="museum_id" ColumnName="museum_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profession_Types">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Profession_Types">
+              <MappingFragment StoreEntitySet="Profession_Types">
+                <ScalarProperty Name="profession_type_name" ColumnName="profession_type_name" />
+                <ScalarProperty Name="profession_type_id" ColumnName="profession_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Professions">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Profession">
+              <MappingFragment StoreEntitySet="Professions">
+                <ScalarProperty Name="profession_cafedra_id" ColumnName="profession_cafedra_id" />
+                <ScalarProperty Name="profession_profession_type_id" ColumnName="profession_profession_type_id" />
+                <ScalarProperty Name="profession_name" ColumnName="profession_name" />
+                <ScalarProperty Name="profession_id" ColumnName="profession_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prorector_Branchs">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Prorector_Branchs">
+              <MappingFragment StoreEntitySet="Prorector_Branchs">
+                <ScalarProperty Name="prorector_branch_prorector_id" ColumnName="prorector_branch_prorector_id" />
+                <ScalarProperty Name="prorector_branch_name" ColumnName="prorector_branch_name" />
+                <ScalarProperty Name="prorector_branch_id" ColumnName="prorector_branch_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Student">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="student_profession_id" ColumnName="student_profession_id" />
+                <ScalarProperty Name="student_gender_id" ColumnName="student_gender_id" />
+                <ScalarProperty Name="student_password" ColumnName="student_password" />
+                <ScalarProperty Name="student_email" ColumnName="student_email" />
+                <ScalarProperty Name="student_father_name" ColumnName="student_father_name" />
+                <ScalarProperty Name="student_surname" ColumnName="student_surname" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Subject">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="subject_profession_id" ColumnName="subject_profession_id" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teachers">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Teacher">
+              <MappingFragment StoreEntitySet="Teachers">
+                <ScalarProperty Name="teacher_gender_id" ColumnName="teacher_gender_id" />
+                <ScalarProperty Name="teacher_password" ColumnName="teacher_password" />
+                <ScalarProperty Name="teacher_email" ColumnName="teacher_email" />
+                <ScalarProperty Name="teacher_father_name" ColumnName="teacher_father_name" />
+                <ScalarProperty Name="teacher_surname" ColumnName="teacher_surname" />
+                <ScalarProperty Name="teacher_name" ColumnName="teacher_name" />
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teachers_Subjects_Pivot">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.Teachers_Subjects_Pivot">
+              <MappingFragment StoreEntitySet="Teachers_Subjects_Pivot">
+                <ScalarProperty Name="ts_subject_id" ColumnName="ts_subject_id" />
+                <ScalarProperty Name="ts_teacher_id" ColumnName="ts_teacher_id" />
+                <ScalarProperty Name="ts_id" ColumnName="ts_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Roles">
+            <EntityTypeMapping TypeName="BDU_ManagementModel.User_Roles">
+              <MappingFragment StoreEntitySet="User_Roles">
+                <ScalarProperty Name="user_role_name" ColumnName="user_role_name" />
+                <ScalarProperty Name="user_role_id" ColumnName="user_role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

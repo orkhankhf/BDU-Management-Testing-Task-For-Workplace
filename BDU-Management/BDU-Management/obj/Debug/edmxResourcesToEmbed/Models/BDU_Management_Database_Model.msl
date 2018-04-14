@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDU_ManagementModelStoreContainer" CdmEntityContainer="BDU_ManagementEntities">
+    <EntitySetMapping Name="Authorized_Persons">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Authorized_Persons">
+        <MappingFragment StoreEntitySet="Authorized_Persons">
+          <ScalarProperty Name="authorized_person_gender_id" ColumnName="authorized_person_gender_id" />
+          <ScalarProperty Name="authorized_person_degree_id" ColumnName="authorized_person_degree_id" />
+          <ScalarProperty Name="authorized_person_role_id" ColumnName="authorized_person_role_id" />
+          <ScalarProperty Name="authorized_person_password" ColumnName="authorized_person_password" />
+          <ScalarProperty Name="authorized_person_email" ColumnName="authorized_person_email" />
+          <ScalarProperty Name="authorized_person_father_name" ColumnName="authorized_person_father_name" />
+          <ScalarProperty Name="authorized_person_surname" ColumnName="authorized_person_surname" />
+          <ScalarProperty Name="authorized_person_name" ColumnName="authorized_person_name" />
+          <ScalarProperty Name="authorized_person_id" ColumnName="authorized_person_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cafedras">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Cafedra">
+        <MappingFragment StoreEntitySet="Cafedras">
+          <ScalarProperty Name="cafedra_faculty_id" ColumnName="cafedra_faculty_id" />
+          <ScalarProperty Name="cafedra_chief_id" ColumnName="cafedra_chief_id" />
+          <ScalarProperty Name="cafedra_name" ColumnName="cafedra_name" />
+          <ScalarProperty Name="cafedra_id" ColumnName="cafedra_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Centers">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Center">
+        <MappingFragment StoreEntitySet="Centers">
+          <ScalarProperty Name="center_chief_id" ColumnName="center_chief_id" />
+          <ScalarProperty Name="center_name" ColumnName="center_name" />
+          <ScalarProperty Name="center_id" ColumnName="center_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Degrees">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Degree">
+        <MappingFragment StoreEntitySet="Degrees">
+          <ScalarProperty Name="degree_name" ColumnName="degree_name" />
+          <ScalarProperty Name="degree_id" ColumnName="degree_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faculties">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Faculty">
+        <MappingFragment StoreEntitySet="Faculties">
+          <ScalarProperty Name="faculty_dean_id" ColumnName="faculty_dean_id" />
+          <ScalarProperty Name="faculty_name" ColumnName="faculty_name" />
+          <ScalarProperty Name="faculty_id" ColumnName="faculty_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Gender">
+        <MappingFragment StoreEntitySet="Genders">
+          <ScalarProperty Name="gender_name" ColumnName="gender_name" />
+          <ScalarProperty Name="gender_id" ColumnName="gender_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Museums">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Museum">
+        <MappingFragment StoreEntitySet="Museums">
+          <ScalarProperty Name="museum_chief_id" ColumnName="museum_chief_id" />
+          <ScalarProperty Name="museum_name" ColumnName="museum_name" />
+          <ScalarProperty Name="museum_id" ColumnName="museum_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profession_Types">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Profession_Types">
+        <MappingFragment StoreEntitySet="Profession_Types">
+          <ScalarProperty Name="profession_type_name" ColumnName="profession_type_name" />
+          <ScalarProperty Name="profession_type_id" ColumnName="profession_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Professions">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Profession">
+        <MappingFragment StoreEntitySet="Professions">
+          <ScalarProperty Name="profession_cafedra_id" ColumnName="profession_cafedra_id" />
+          <ScalarProperty Name="profession_profession_type_id" ColumnName="profession_profession_type_id" />
+          <ScalarProperty Name="profession_name" ColumnName="profession_name" />
+          <ScalarProperty Name="profession_id" ColumnName="profession_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prorector_Branchs">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Prorector_Branchs">
+        <MappingFragment StoreEntitySet="Prorector_Branchs">
+          <ScalarProperty Name="prorector_branch_prorector_id" ColumnName="prorector_branch_prorector_id" />
+          <ScalarProperty Name="prorector_branch_name" ColumnName="prorector_branch_name" />
+          <ScalarProperty Name="prorector_branch_id" ColumnName="prorector_branch_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Student">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="student_profession_id" ColumnName="student_profession_id" />
+          <ScalarProperty Name="student_gender_id" ColumnName="student_gender_id" />
+          <ScalarProperty Name="student_password" ColumnName="student_password" />
+          <ScalarProperty Name="student_email" ColumnName="student_email" />
+          <ScalarProperty Name="student_father_name" ColumnName="student_father_name" />
+          <ScalarProperty Name="student_surname" ColumnName="student_surname" />
+          <ScalarProperty Name="student_name" ColumnName="student_name" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subjects">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Subject">
+        <MappingFragment StoreEntitySet="Subjects">
+          <ScalarProperty Name="subject_profession_id" ColumnName="subject_profession_id" />
+          <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+          <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Teacher">
+        <MappingFragment StoreEntitySet="Teachers">
+          <ScalarProperty Name="teacher_gender_id" ColumnName="teacher_gender_id" />
+          <ScalarProperty Name="teacher_password" ColumnName="teacher_password" />
+          <ScalarProperty Name="teacher_email" ColumnName="teacher_email" />
+          <ScalarProperty Name="teacher_father_name" ColumnName="teacher_father_name" />
+          <ScalarProperty Name="teacher_surname" ColumnName="teacher_surname" />
+          <ScalarProperty Name="teacher_name" ColumnName="teacher_name" />
+          <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers_Subjects_Pivot">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.Teachers_Subjects_Pivot">
+        <MappingFragment StoreEntitySet="Teachers_Subjects_Pivot">
+          <ScalarProperty Name="ts_subject_id" ColumnName="ts_subject_id" />
+          <ScalarProperty Name="ts_teacher_id" ColumnName="ts_teacher_id" />
+          <ScalarProperty Name="ts_id" ColumnName="ts_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Roles">
+      <EntityTypeMapping TypeName="BDU_ManagementModel.User_Roles">
+        <MappingFragment StoreEntitySet="User_Roles">
+          <ScalarProperty Name="user_role_name" ColumnName="user_role_name" />
+          <ScalarProperty Name="user_role_id" ColumnName="user_role_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

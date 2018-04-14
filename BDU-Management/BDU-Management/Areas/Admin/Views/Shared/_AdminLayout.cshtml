@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="~/Assets/img/favicon.png">
+    @RenderSection("styles", required: false)
+</head>
+<body>
+	<div class="Haydar_Aliev_remarks">
+		<div class="text">
+			Bakı Dövlət Universiteti<br>
+			Azərbaycan xalqının milli sərvətidir!
+		</div>
+		<div class="pull-right quote-author">Heydər Əliyev</div>
+		<img src="~/Assets/img/Haydar_Aliev.png" />
+	</div>
+	<!--Header-part-->
+	<div id="header">
+		<h1><a href="@Url.Action("Index", "Dashboard", new { Area="Adminpanel"})">Matrix Admin</a></h1>
+	</div>
+	<!--close-Header-part-->
+	<!--top-Header-menu-->
+	<div id="user-nav" class="navbar navbar-inverse">
+		<ul class="nav">
+			<li>
+				<a href=""><i class="icon icon-user"></i>  <span class="text">Xoş Gəlmisiniz </span></a>
+			</li>
+			<li class=""><a title="" href="@Url.Action("Index","Login", new { Area = ""})"><i class="icon icon-share-alt"></i> <span class="text">Çıxış</span></a></li>
+		</ul>
+	</div>
+	<!--close-top-Header-menu-->
+	<!--start-top-serch-->
+	<div id="search">
+		<input type="text" placeholder="Search here..." />
+		<button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+	</div>
+	<!--close-top-serch-->
+	<!--sidebar-menu-->
+	<div id="sidebar">
+		<a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+		<ul>
+			<li class="active"><a href="@Url.Action("Index", "Dashboard", new { Area="Admin"})"><span>Ana Səhifə</span></a> </li>
+			<li class="submenu">
+				<a href="#"><span>Vəzifələr</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "User_Roles", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "User_Roles", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Cinslər (Genders)</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Genders", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Genders", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Dərəcələr</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Degrees", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Degrees", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Səlahiyyətli Şəxslər</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Authorized_Persons", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Authorized_Persons", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Mərkəzlər</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Centers", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Centers", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Muzeylər</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Museums", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Museums", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Prorektor Sahələri</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Prorector_Branchs", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Prorector_Branchs", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Fakultələr</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Faculties", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Faculties", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Kafedralar</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Cafedras", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Cafedras", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>İxtisas Növləri</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Profession_Types", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Profession_Types", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>İxtisaslar</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Professions", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Professions", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Tələbələr</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Students", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Students", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Fənnlər</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Subjects", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Subjects", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Müəllimlər</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Teachers", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Teachers", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#"><span>Müəllimlərin Fənnləri</span> <span class="icon-sort-down icon-down"></span></a>
+				<ul>
+					<li><a href="@Url.Action("Create", "Teachers_Subjects_Pivot", new { Area="Admin"})">Əlavə Et</a></li>
+					<li><a href="@Url.Action("Index", "Teachers_Subjects_Pivot", new { Area="Admin"})">Redaktə Et / Sil</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!--sidebar-menu-->
+	<!--main-container-part-->
+
+	@RenderBody()
+
+	<!--end-main-container-part-->
+	<!--Footer-part-->
+
+	<div class="row-fluid">
+		<div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
+	</div>
+
+	<!--end-Footer-part-->
+	@RenderSection("scripts", required: false)
+
+	<script type="text/javascript">
+		// This function is called from the pop-up menus to transfer to
+		// a different page. Ignore if the value returned is a null string:
+		function goPage(newURL) {
+
+			// if url is empty, skip the menu dividers and reset the menu selection to default
+			if (newURL != "") {
+
+				// if url is "-", it is this page -- reset the menu:
+				if (newURL == "-") {
+					resetMenu();
+				}
+				// else, send page to designated URL
+				else {
+					document.location.href = newURL;
+				}
+			}
+		}
+
+		// resets the menu selection upon entry to this page:
+		function resetMenu() {
+			document.gomenu.selector.selectedIndex = 2;
+		}
+	</script>
+</body>
+</html>
+

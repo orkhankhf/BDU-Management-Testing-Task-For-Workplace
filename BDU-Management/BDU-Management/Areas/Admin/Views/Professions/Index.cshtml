@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BDU_Management.Models.Profession>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="content">
+	<!--breadcrumbs-->
+	<div id="content-header"></div>
+	<!--End-breadcrumbs-->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span6">
+				<table class="table">
+					<tr>
+						<th>
+							Fakultə
+						</th>
+						<th>
+							Kafedra
+						</th>
+						<th>
+							İxtisas Adı
+						</th>
+						<th>
+							İxtisas Növü
+						</th>
+						<th></th>
+					</tr>
+
+					@foreach (var item in Model)
+					{
+					<tr>
+						<td>
+							@Html.DisplayFor(modelItem => item.Cafedra.Faculty.faculty_name)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Cafedra.cafedra_name)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.profession_name)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Profession_Types.profession_type_name)
+						</td>
+						<td>
+							@Html.ActionLink("Edit", "Edit", new { id = item.profession_id }) |
+							@Html.ActionLink("Details", "Details", new { id = item.profession_id }) |
+							@Html.ActionLink("Delete", "Delete", new { id = item.profession_id })
+						</td>
+					</tr>
+					}
+
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section styles{
+	<link rel="stylesheet" href="~/Assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/uniform.css" />
+	<link rel="stylesheet" href="~/Assets/css/select2.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-style.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-media.css" />
+	<link rel="stylesheet" href="~/Assets/font-awesome/css/font-awesome.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="~/assets/style.css" />
+}
+@section scripts {
+	<script src="~/Assets/js/jquery.min.js"></script>
+	<script src="~/Assets/js/jquery.ui.custom.js"></script>
+	<script src="~/Assets/js/bootstrap.min.js"></script>
+	<script src="~/Assets/js/jquery.uniform.js"></script>
+	<script src="~/Assets/js/select2.min.js"></script>
+	<script src="~/Assets/js/jquery.validate.js"></script>
+	<script src="~/Assets/js/matrix.js"></script>
+	<script src="~/Assets/js/matrix.form_validation.js"></script>
+}

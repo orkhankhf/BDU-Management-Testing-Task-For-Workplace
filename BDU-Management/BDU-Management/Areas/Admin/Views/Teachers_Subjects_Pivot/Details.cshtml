@@ -1,0 +1,65 @@
+﻿@model BDU_Management.Models.Teachers_Subjects_Pivot
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="content">
+	<!--breadcrumbs-->
+	<div id="content-header"></div>
+	<!--End-breadcrumbs-->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span6">
+				<div>
+					<dl class="dl-horizontal">
+						<dt>
+							Fənn
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.Subject.subject_name)
+						</dd>
+
+						<dt>
+							Müəllim
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.Teacher.teacher_name)
+							@Html.DisplayFor(model => model.Teacher.teacher_surname)
+						</dd>
+
+					</dl>
+				</div>
+				<p>
+					@Html.ActionLink("Edit", "Edit", new { id = Model.ts_id }) |
+					@Html.ActionLink("Back to List", "Index")
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section styles{
+	<link rel="stylesheet" href="~/Assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/uniform.css" />
+	<link rel="stylesheet" href="~/Assets/css/select2.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-style.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-media.css" />
+	<link rel="stylesheet" href="~/Assets/font-awesome/css/font-awesome.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="~/assets/style.css" />
+}
+@section scripts {
+	<script src="~/Assets/js/jquery.min.js"></script>
+	<script src="~/Assets/js/jquery.ui.custom.js"></script>
+	<script src="~/Assets/js/bootstrap.min.js"></script>
+	<script src="~/Assets/js/jquery.uniform.js"></script>
+	<script src="~/Assets/js/select2.min.js"></script>
+	<script src="~/Assets/js/jquery.validate.js"></script>
+	<script src="~/Assets/js/matrix.js"></script>
+	<script src="~/Assets/js/matrix.form_validation.js"></script>
+}

@@ -1,0 +1,73 @@
+﻿@model BDU_Management.Models.Prorector_Branchs
+
+@{
+	ViewBag.Title = "Create";
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="content">
+	<!--breadcrumbs-->
+	<div id="content-header"></div>
+	<!--End-breadcrumbs-->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span6">
+				@using (Html.BeginForm())
+				{
+					@Html.AntiForgeryToken()
+
+					<div class="form-horizontal">
+						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+						<div class="form-group">
+							Sahə/Şöbə Adı
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.prorector_branch_name, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.prorector_branch_name, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							Prorektor
+							<div class="col-md-10">
+								@Html.DropDownList("prorector_branch_prorector_id", null, htmlAttributes: new { @class = "form-control" })
+								@Html.ValidationMessageFor(model => model.prorector_branch_prorector_id, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<input type="submit" value="Create" class="btn btn-default" />
+							</div>
+						</div>
+					</div>
+				}
+
+				<div>
+					@Html.ActionLink("Back to List", "Index")
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section styles{
+	<link rel="stylesheet" href="~/Assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/uniform.css" />
+	<link rel="stylesheet" href="~/Assets/css/select2.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-style.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-media.css" />
+	<link rel="stylesheet" href="~/Assets/font-awesome/css/font-awesome.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="~/assets/style.css" />
+}
+@section scripts {
+	<script src="~/Assets/js/jquery.min.js"></script>
+	<script src="~/Assets/js/jquery.ui.custom.js"></script>
+	<script src="~/Assets/js/bootstrap.min.js"></script>
+	<script src="~/Assets/js/jquery.uniform.js"></script>
+	<script src="~/Assets/js/select2.min.js"></script>
+	<script src="~/Assets/js/jquery.validate.js"></script>
+	<script src="~/Assets/js/matrix.js"></script>
+	<script src="~/Assets/js/matrix.form_validation.js"></script>
+}

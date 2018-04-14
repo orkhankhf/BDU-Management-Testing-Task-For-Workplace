@@ -1,0 +1,35 @@
+﻿@model BDU_Management.Models.Museum
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Museum</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.museum_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.museum_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Authorized_Persons.authorized_person_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Authorized_Persons.authorized_person_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.museum_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

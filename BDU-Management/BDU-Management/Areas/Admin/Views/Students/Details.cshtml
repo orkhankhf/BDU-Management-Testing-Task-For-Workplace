@@ -1,0 +1,103 @@
+﻿@model BDU_Management.Models.Student
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="content">
+	<!--breadcrumbs-->
+	<div id="content-header"></div>
+	<!--End-breadcrumbs-->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span6">
+				<div>
+					<dl class="dl-horizontal">
+						<dt>
+							Ad
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.student_name)
+						</dd>
+						<dt>
+							Soyad
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.student_surname)
+						</dd>
+						<dt>
+							Ata Adı
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.student_father_name)
+						</dd>
+						<dt>
+							Email
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.student_email)
+						</dd>
+						<dt>
+							Cins
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Gender.gender_name)
+						</dd>
+						<dt>
+							Fakultə
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Profession.Cafedra.Faculty.faculty_name)
+						</dd>
+						<dt>
+							Kafedra
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Profession.Cafedra.cafedra_name)
+						</dd>
+						<dt>
+							İxtisas
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Profession.profession_name)
+						</dd>
+						<dt>
+							İxtisas Növü
+						</dt>
+						<dd>
+							@Html.DisplayFor(model => model.Profession.Profession_Types.profession_type_name)
+						</dd>
+
+					</dl>
+				</div>
+				<p>
+					@Html.ActionLink("Edit", "Edit", new { id = Model.student_id }) |
+					@Html.ActionLink("Back to List", "Index")
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section styles{
+	<link rel="stylesheet" href="~/Assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="~/Assets/css/uniform.css" />
+	<link rel="stylesheet" href="~/Assets/css/select2.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-style.css" />
+	<link rel="stylesheet" href="~/Assets/css/matrix-media.css" />
+	<link rel="stylesheet" href="~/Assets/font-awesome/css/font-awesome.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="~/assets/style.css" />
+}
+@section scripts {
+	<script src="~/Assets/js/jquery.min.js"></script>
+	<script src="~/Assets/js/jquery.ui.custom.js"></script>
+	<script src="~/Assets/js/bootstrap.min.js"></script>
+	<script src="~/Assets/js/jquery.uniform.js"></script>
+	<script src="~/Assets/js/select2.min.js"></script>
+	<script src="~/Assets/js/jquery.validate.js"></script>
+	<script src="~/Assets/js/matrix.js"></script>
+	<script src="~/Assets/js/matrix.form_validation.js"></script>
+}
